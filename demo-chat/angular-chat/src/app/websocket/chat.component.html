@@ -1,0 +1,10 @@
+<div>
+  <h2>Chat</h2>
+  <div *ngFor="let message of messages">
+    <div *ngIf="message.type==1" style="margin-left: 20px;"><strong >{{ message.sender }}:</strong> {{ message.content }}</div>
+    <div *ngIf="message.type==0" style="margin-right: 20px;"><strong >{{ message.sender }}:</strong> {{ message.content }}</div>
+  </div>
+  <input [(ngModel)]="recipient" placeholder="Recipient">
+  <input [(ngModel)]="messageContent" placeholder="Type a message...">
+  <button (click)="sendMessage()">Send</button>
+</div>
